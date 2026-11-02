@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102a43">
+  <meta name="description" content="SafeHome Store — practical home and personal safety essentials.">
+  <title>SafeHome Store | Everyday Safety Essentials</title>
+  <style>
+    :root{--navy:#102a43;--blue:#176b87;--teal:#2a9d8f;--ink:#243b53;--muted:#627d98;--bg:#f5f8fb;--line:#d9e2ec;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+    header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:5;box-shadow:0 2px 12px #102a4322}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0}
+    .brand{font-weight:800;font-size:1.2rem;letter-spacing:.2px}.brand span{color:#71d6c5}
+    nav{display:flex;gap:22px;font-size:.94rem}nav a{opacity:.9}nav a:hover{color:#71d6c5}
+    .hero{background:linear-gradient(120deg,#102a43,#176b87);color:#fff;padding:72px 0 66px}
+    .hero-grid{display:grid;grid-template-columns:1.35fr .8fr;align-items:center;gap:35px}
+    .eyebrow{color:#8de0d2;text-transform:uppercase;font-weight:700;letter-spacing:1.4px;font-size:.78rem}
+    h1{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.08;margin:13px 0 18px}
+    .hero p{color:#e4edf4;max-width:600px;font-size:1.08rem}
+    .btn{display:inline-block;border:0;border-radius:10px;padding:12px 18px;font-weight:700;cursor:pointer;background:var(--teal);color:#fff}
+    .btn:hover{filter:brightness(.95)}.btn.secondary{background:#fff;color:var(--navy);margin-left:8px}
+    .hero-card{background:#ffffff13;border:1px solid #ffffff35;border-radius:22px;padding:25px;text-align:center}
+    .hero-icon{font-size:5rem;line-height:1.2}.hero-card strong{display:block;font-size:1.2rem;margin-top:12px}
+    section{padding:55px 0}.section-head{text-align:center;margin-bottom:28px}.section-head h2{font-size:2rem;color:var(--navy);margin:0 0 7px}.section-head p{color:var(--muted);margin:0}
+    .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-1px}
+    .trust div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px;text-align:center;font-weight:700}
+    .trust span{display:block;font-size:1.5rem;margin-bottom:5px}
+    .filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:22px}
+    .filter{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+    .filter.active{background:var(--navy);border-color:var(--navy);color:#fff}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .product{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 5px 18px #102a4308}
+    .product-art{height:145px;display:grid;place-items:center;background:linear-gradient(135deg,#e8f4f7,#f4f8fb);font-size:4.1rem}
+    .product-body{padding:17px;display:flex;flex-direction:column;flex:1}
+    .tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.7px;color:var(--blue);font-weight:800}
+    .product h3{margin:6px 0;font-size:1.12rem;color:var(--navy)}
+    .product p{margin:0 0 14px;color:var(--muted);font-size:.92rem;flex:1}
+    .price{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:13px}
+    .product .btn{width:100%;text-align:center}
+    .note{font-size:.83rem;color:var(--muted);text-align:center;margin-top:18px}
+    .about{background:#eaf2f7}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+    .about h2{color:var(--navy);font-size:2rem;margin:0 0 10px}.about p{color:var(--muted)}
+    .checklist{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+    .checklist div{padding:9px 0;border-bottom:1px solid var(--line)}.checklist div:last-child{border:0}
+    .contact{background:#fff}.contact-box{background:var(--navy);color:#fff;border-radius:20px;padding:30px;text-align:center}
+    .contact-box p{color:#d7e4ed}.contact-box .btn{background:#25a66a}
+    footer{background:#0b1f33;color:#c7d4df;padding:25px 0;font-size:.88rem}
+    footer .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .disclaimer{font-size:.78rem;color:#8fa8bb;margin-top:10px}
+    @media(max-width:760px){.hero{padding:52px 0}.hero-grid,.about-grid{grid-template-columns:1fr}.hero-card{max-width:330px;margin:auto}.grid{grid-template-columns:repeat(2,1fr)}nav{gap:12px;font-size:.84rem}.trust{grid-template-columns:1fr}}
+    @media(max-width:480px){.nav{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.hero h1{font-size:2.35rem}.btn.secondary{margin:10px 0 0}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">SafeHome <span>Store</span></a>
+    <nav aria-label="Main navigation"><a href="#products">Products</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Everyday safety, made simpler</div>
+        <h1>Feel more prepared.<br>Every day.</h1>
+        <p>Explore practical home and personal safety essentials selected to help you prepare for everyday situations.</p>
+        <a class="btn" href="#products">Explore products</a>
+        <a class="btn secondary" href="#contact">Ask a question</a>
+      </div>
+      <div class="hero-card"><div class="hero-icon">🛡️</div><strong>Small steps. Safer spaces.</strong><span>Useful essentials for home, travel and emergencies.</span></div>
+    </div>
+  </section>
+
+  <section style="padding:22px 0">
+    <div class="wrap trust">
+      <div><span>🏠</span>Home essentials</div>
+      <div><span>🎒</span>Personal preparedness</div>
+      <div><span>📦</span>Order enquiries on WhatsApp</div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="wrap">
+      <div class="section-head"><h2>Featured products</h2><p>Browse our starter catalogue. Ask us for current price and availability.</p></div>
+      <div class="filters" aria-label="Filter products">
+        <button class="filter active" data-filter="all">All products</button>
+        <button class="filter" data-filter="home">Home safety</button>
+        <button class="filter" data-filter="personal">Personal safety</button>
+        <button class="filter" data-filter="emergency">Emergency</button>
+      </div>
+      <div class="grid" id="productGrid">
+        <article class="product" data-category="home">
+          <div class="product-art">🚨</div><div class="product-body"><span class="tag">Home safety</span><h3>Smoke Alarm</h3><p>An early-warning device for detecting smoke in suitable indoor spaces. Follow the manufacturer's installation and testing guidance.</p><div class="price">Ask for price</div><a class="btn order" href="#" data-product="Smoke Alarm">Enquire on WhatsApp</a></div>
+        </article>
+        <article class="product" data-category="home">
+          <div class="product-art">🔔</div><div class="product-body"><span class="tag">Home safety</span><h3>Door / Window Alarm</h3><p>A simple alert device that can notify you when a door or window is opened.</p><div class="price">Ask for price</div><a class="btn order" href="#" data-product="Door / Window Alarm">Enquire on WhatsApp</a></div>
+        </article>
+        <article class="product" data-category="emergency">
+          <div class="product-art">🧰</div><div class="product-body"><span class="tag">Emergency</span><h3>First Aid Kit</h3><p>A compact kit for keeping basic first-aid supplies organised at home or while travelling.</p><div class="price">Ask for price</div><a class="btn order" href="#" data-product="First Aid Kit">Enquire on WhatsApp</a></div>
+        </article>
+        <article class="product" data-category="personal">
+          <div class="product-art">🔦</div><div class="product-body"><span class="tag">Personal safety</span><h3>Rechargeable Torch</h3><p>A handy light for power cuts, roadside delays and everyday use.</p><div class="price">Ask for price</div><a class="btn order" href="#" data-product="Rechargeable Torch">Enquire on WhatsApp</a></div>
+        </article>
+        <article class="product" data-category="personal">
+          <div class="product-art">📣</div><div class="product-body"><span class="tag">Personal safety</span><h3>Emergency Whistle</h3><p>A lightweight audible signalling accessory for outdoor activities and emergency kits.</p><div class="price">Ask for price</div><a class="btn order" href="#" data-product="Emergency Whistle">Enquire on WhatsApp</a></div>
+        </article>
+        <article class="product" data-category="emergency">
+          <div class="product-art">🔋</div><div class="product-body"><span class="tag">Emergency</span><h3>Power Bank</h3><p>A portable backup power option for compatible phones and small devices. Check capacity and safety certifications before purchase.</p><div class="price">Ask for price</div><a class="btn order" href="#" data-product="Power Bank">Enquire on WhatsApp</a></div>
+        </article>
+      </div>
+      <p class="note">Product examples are placeholders. Confirm supplier, stock, specifications, pricing, warranty and delivery terms before listing items for sale.</p>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div><div class="eyebrow" style="color:#176b87">About SafeHome Store</div><h2>Practical essentials for peace of mind.</h2><p>SafeHome Store is a simple catalogue for everyday home, travel and emergency-preparedness products. We aim to make it easier to ask questions and compare product details before ordering.</p></div>
+      <div class="checklist"><strong>Before placing an order</strong><div>✓ Confirm the final price and delivery charge</div><div>✓ Check product specifications and compatibility</div><div>✓ Ask about returns, warranty and delivery time</div><div>✓ Request a proper invoice from the seller</div></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap"><div class="contact-box"><h2>Need help choosing?</h2><p>Send us a WhatsApp enquiry. We’ll confirm availability and details before you order.</p><a class="btn" id="generalWhatsApp" href="#">Chat on WhatsApp</a><p class="disclaimer">Replace the demo WhatsApp number in the website settings before publishing.</p></div></div>
+  </section>
+</main>
+
+<footer><div class="wrap foot"><div><strong>SafeHome Store</strong><br>Everyday safety essentials.</div><div>© <span id="year"></span> SafeHome Store. All rights reserved.</div></div><div class="wrap disclaimer">This website is a starter template. Product descriptions are general information, not a guarantee of protection. Always follow product instructions and applicable safety guidance.</div></footer>
+
+<script>
+  // IMPORTANT: Replace this with your WhatsApp number, including country code, digits only.
+  // Example format for India: 91XXXXXXXXXX (do not include +, spaces or dashes).
+  const WHATSAPP_NUMBER = "91XXXXXXXXXX";
+  const numberConfigured = /^\d{10,15}$/.test(WHATSAPP_NUMBER) && !WHATSAPP_NUMBER.includes("X");
+  function whatsappUrl(message){
+    return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+  }
+  document.querySelectorAll(".order").forEach(link=>{
+    link.addEventListener("click",event=>{
+      event.preventDefault();
+      if(!numberConfigured){alert("Please add your WhatsApp number in index.html first (search for WHATSAPP_NUMBER).");return;}
+      window.open(whatsappUrl("Hello SafeHome Store, I would like to enquire about: " + link.dataset.product + ". Please share price, availability and delivery details."),"_blank","noopener");
+    });
+  });
+  document.getElementById("generalWhatsApp").addEventListener("click",event=>{
+    event.preventDefault();
+    if(!numberConfigured){alert("Please add your WhatsApp number in index.html first (search for WHATSAPP_NUMBER).");return;}
+    window.open(whatsappUrl("Hello SafeHome Store, I have a question about your products."),"_blank","noopener");
+  });
+  document.querySelectorAll(".filter").forEach(button=>{
+    button.addEventListener("click",()=>{
+      document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+      button.classList.add("active");
+      const filter=button.dataset.filter;
+      document.querySelectorAll(".product").forEach(card=>{
+        card.style.display=(filter==="all"||card.dataset.category===filter)?"flex":"none";
+      });
+    });
+  });
+  document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
